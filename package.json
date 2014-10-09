@@ -4,7 +4,8 @@
     "description" : "Scoreboard and task system for RE and BV",
     "dependencies" : {
         "express" : "*",
-        "ejs" : "*"
+        "ejs" : "*",
+        "morgan" : "*"
     },
     "repository" : {
         "type" : "git",

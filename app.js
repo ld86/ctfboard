@@ -1,13 +1,14 @@
 #!/usr/bin/node
 
 var express = require('express');
+var morgan = require('morgan')
 var routes = require('./routes')
 var app = express();
 
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
-app.use(express.logger('dev'));
+app.use(morgan('dev'))
 
 app.get('/re/14/ratings.html', routes.index);
 
