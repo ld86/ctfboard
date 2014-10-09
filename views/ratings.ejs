@@ -24,18 +24,30 @@
             <div class="welcome-message">
                 <h3>Таблица результатов</h3>
             </div>
-
-            <table>
+            <table class="scoreboard">
                 <tr>
                     <td>
-                        Who
                     </td>
                     <% for (var i = 0; i < tasks.length; ++i) { %>
                     <td>
-                        <%= tasks[i] %>
+                        <%= tasks[i].name %>
                     </td>
                     <% } %>
                 </tr>
+                <% for (var i = 0; i < users.length; ++i) { %>
+                <tr>
+                    <td>
+                        <%= users[i].nick %>
+                    </td>
+                    <% for (var j = 0; j < tasks.length; ++j) { %>
+                    <td>
+                        <% if (tasks[j].name in users[i].tasks) { %>
+                            <%= users[i].tasks[tasks[j].name] %>
+                        <% } %>
+                    </td>
+                    <% } %>
+                <tr>
+                <% } %>
             </table>
 
         </div>
