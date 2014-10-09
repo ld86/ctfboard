@@ -23,32 +23,44 @@
         <div class="container">
             <div class="welcome-message">
                 <h3>Таблица результатов</h3>
+                <br/>
             </div>
             <table class="scoreboard">
-                <tr>
+                <tr class="blackrow">
                     <td>
+                        Nick
                     </td>
                     <% for (var i = 0; i < tasks.length; ++i) { %>
                     <td>
                         <%= tasks[i].name %>
                     </td>
                     <% } %>
-                </tr>
-                <% for (var i = 0; i < users.length; ++i) { %>
-                <tr>
                     <td>
-                        <%= users[i].nick %>
+                        Total
+                    </td>
+                </tr>
+                <% for (var i = 0; i < sortedNicks.length; ++i) { %>
+                <% var nick = sortedNicks[i][0] %>
+                <% var totalScore = sortedNicks[i][1] %>
+                <tr <% if (i % 2 == 1) { %> class="blackrow" <% } %>>
+                    <td>
+                        <%= nick %>
                     </td>
                     <% for (var j = 0; j < tasks.length; ++j) { %>
                     <td>
-                        <% if (tasks[j].name in users[i].tasks) { %>
-                            <%= users[i].tasks[tasks[j].name] %>
+                        <% if (tasks[j].name in users[nick].tasks) { %>
+                            <%= users[nick].tasks[tasks[j].name] %>
                         <% } %>
                     </td>
                     <% } %>
-                <tr>
+                    <td>
+                        <%= totalScore %>
+                    </td>
+                </tr>
                 <% } %>
             </table>
+            <div class="gap">
+            </div>
 
         </div>
 

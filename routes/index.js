@@ -9,20 +9,16 @@ exports.ratings = function(req, res) {
             users = JSON.parse(users);
 
             sorted = [];
-            for (var i = 0; i < users.users.length; ++i) {
+            for (var nick in users) {
                 var totalScore = 0;
-                for (var taskName in users.users[i].tasks) {
-                    totalScore += users.users[i].tasks[taskName];
+                for (var taskName in users[nick].tasks) {
+                    totalScore += users[nick].tasks[taskName];
                 }
-                sorted.push([i, totalScore]);
+                sorted.push([nick, totalScore]);
             }
             sorted.sort(function(a, b) { return b[1] - a[1] });
 
-            for (var i = 0; i < sorted.length; ++i) {
-                sorted[i] = users.users[sorted[i][0]]
-            }
-
-            variables = { 'tasks' : tasks.tasks, 'users' : sorted};
+            variables = { 'tasks' : tasks.tasks, 'users' : users, 'sortedNicks': sorted};
             res.render('ratings', variables);
         });
     });
