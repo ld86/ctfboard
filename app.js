@@ -7,7 +7,7 @@ var app = express();
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
-app.get('/', routes.index);
+app.get('/re/14/ratings.html', routes.index);
 
 app.listen(8080, function() {
     console.log("I listen you.")
