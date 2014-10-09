@@ -7,6 +7,8 @@ var app = express();
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
+app.use(express.logger('dev'));
+
 app.get('/re/14/ratings.html', routes.index);
 
 app.listen(8080, function() {
