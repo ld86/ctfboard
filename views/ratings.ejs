@@ -25,7 +25,18 @@
                 <h3>Таблица результатов</h3>
             </div>
 
-            <%= tasks >
+            <table>
+                <tr>
+                    <td>
+                        Who
+                    </td>
+                    <% for (var i = 0; i < tasks.length; ++i) { %>
+                    <td>
+                        <%= tasks[i] %>
+                    </td>
+                    <% } %>
+                </tr>
+            </table>
 
         </div>
 
