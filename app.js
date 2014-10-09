@@ -9,6 +9,6 @@ app.set('view engine', 'ejs');
 
 app.get('/', routes.index);
 
-app.listen(8080, "localhost", function() {
+app.listen(8080, function() {
     console.log("I listen you.")
 });
