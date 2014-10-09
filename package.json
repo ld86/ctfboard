@@ -1,0 +1,13 @@
+{
+    "name": "ctfboard",
+    "version" : "0.0.1",
+    "description" : "Scoreboard and task system for RE and BV",
+    "dependencies" : {
+        "express" : "*",
+        "ejs" : "*"
+    },
+    "repository" : {
+        "type" : "git",
+        "url" : "https://github.com/ld86/ctfboard.git"
+    }
+}
