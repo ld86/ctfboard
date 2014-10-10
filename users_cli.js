@@ -37,3 +37,18 @@ if (action == "rm_user") {
         });
     });
 }
+
+if (action == "add_task") {
+    var name = process.argv[3];
+
+    client.get('tasks', function(err, reply) {
+        var tasks = JSON.parse(reply);
+        console.log(tasks);
+        tasks.tasks.push({'name' : name});
+        console.log(tasks);
+        client.set('tasks', JSON.stringify(tasks), function() {
+            process.exit();
+        });
+    });
+}
+

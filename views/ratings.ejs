@@ -27,22 +27,22 @@
             </div>
             <table class="scoreboard">
                 <tr class="blackrow">
-                    <td>
-                        Nick
-                    </td>
+                    <th>
+                        Nickname
+                    </th>
                     <% for (var i = 0; i < tasks.length; ++i) { %>
-                    <td>
+                    <th>
                         <%= tasks[i].name %>
-                    </td>
+                    </th>
                     <% } %>
-                    <td>
+                    <th>
                         Total
-                    </td>
+                    </th>
                 </tr>
                 <% for (var i = 0; i < sortedNicks.length; ++i) { %>
                 <% var nick = sortedNicks[i][0] %>
                 <% var totalScore = sortedNicks[i][1] %>
-                <tr <% if (i % 2 == 1) { %> class="blackrow" <% } %>>
+                <tr <% if (i % 2 == 0) { %> class="blackrow" <% } %>>
                     <td>
                         <%= nick %>
                     </td>
