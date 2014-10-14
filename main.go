@@ -119,7 +119,7 @@ func (page *AcceptPage) ServeHTTP(w http.ResponseWriter, r *http.Request) {
             AddSolvedTask(page.MongoSession, nickname, flag)
         }
     }
-    http.Redirect(w, r, "/re/14/test", 301)
+    http.Redirect(w, r, "/re/14/ratings.html", 301)
 }
 
 const (
@@ -133,7 +133,7 @@ func main() {
         panic(err)
     }
 
-    ratingsPage := RatingsPage{Prefix : "/re/14/test", TemplateName : "views/ratings", MongoSession : session}
+    ratingsPage := RatingsPage{Prefix : "/re/14/ratings.html", TemplateName : "views/ratings", MongoSession : session}
     acceptPage := AcceptPage{Prefix : "/re/14/accept", MongoSession : session}
 
     http.Handle(ratingsPage.Prefix, &ratingsPage)
