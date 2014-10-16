@@ -35,6 +35,9 @@
             <table class="scoreboard">
                 <tr class="blackrow">
                     <th>
+                        Position
+                    </th>
+                    <th>
                         Nickname
                     </th>
                     {{range $task := $tasks }}
@@ -49,6 +52,9 @@
                 {{range $i, $user := $users }}
                 {{ $even := eq (even $i) 0 }}
                 <tr {{ if $even }} class="blackrow" {{end}} >
+                    <td>
+                    {{ $i }}
+                    </td>
                     <td>
                     {{ $user.Nickname }}
                     </td>
