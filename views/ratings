@@ -20,7 +20,7 @@
             </div>
         </div>
 
-        <div style="scoreboard-container">
+        <div class="scoreboard-container container-fluid">
             <div class="welcome-message">
                 <h3>Таблица результатов</h3>
                 <br/>
