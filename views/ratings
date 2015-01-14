@@ -41,8 +41,13 @@
                         Nickname
                     </th>
                     {{range $task := $tasks }}
-                        <th>
-                            {{ $task.Name }}
+                        <th class="taskname-th">
+                            <div class="stub">
+                                ...
+                            </div>
+                            <div class="taskname">
+                                {{ $task.Name }}
+                            </div>
                         </th>
                     {{end}}
                     <th>
